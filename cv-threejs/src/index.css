@@ -1,3 +1,4 @@
+/* Base styles for body */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +6,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
+/* Light Mode (default) */
+body[data-theme="light"] {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Dark Mode */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Code styling */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  color: inherit; /* Inherit text color for better readability in both themes */
 }
+
+/* Optional: additional styling for other elements */
+a {
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Dark mode button styling */
+body[data-theme="dark"] button {
+  border-color: #e0e0e0;
+}
+
+body[data-theme="light"] button {
+  border-color: #000;
+}
+
